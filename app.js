@@ -11,3 +11,50 @@
 // skaičius yra tas, kuris dalinasi tik iš savęs ir tik iš vieneto be liekanos.) (10 taškų)
 // 10. Parašyti funkciją telefonoNumeris. Funkcija turi priimti vieną kintamąjį - masyvą. Masyvo elementai - skaičiai, ilgis - 10. Funkcija turi grąžinti telefono numerį tokiu formatu - 
 // "(XXX) XXX-XXXX". (10 taškų)
+
+// 1
+console.log(Math.max(15, 15));
+
+// 2
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+// 3
+for (let i = 0; i <= 10; i += 2) {
+    console.log(i);
+}
+
+// 4
+function rand(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min)
+};
+
+for (let i = 0; i < 5; i++) {
+    console.log(rand(1, 10));
+};
+
+// 5
+console.clear();
+
+// let x = 0;
+// while (x = 5) {
+//     let x = rand(1, 10);
+//     console.log(x);
+// };
+
+// 6
+let arr = [...Array(rand(20, 30))].map(_ => rand(10, 30));
+console.log(arr);
+
+let index = 0;
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[index]) {
+        index = i;
+    }
+}
+console.log(arr[index]);
+
+
