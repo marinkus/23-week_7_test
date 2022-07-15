@@ -39,11 +39,11 @@ for (let i = 0; i < 5; i++) {
 // 5
 console.clear();
 
-// let x = 0;
-// while (x = 5) {
-//     let x = rand(1, 10);
-//     console.log(x);
-// };
+let x = 0;
+while (x != 5) {
+    x = Math.floor(Math.random()*10);
+    console.log(x);
+};
 
 // 6
 let arr = [...Array(rand(20, 30))].map(_ => rand(10, 30));
@@ -57,4 +57,88 @@ for (let i = 0; i < arr.length; i++) {
 }
 console.log(arr[index]);
 
+// 7
 
+let arrayOfGivenLetters = ['A', 'B', 'C', 'D'];
+let arrayOfRandomLetters = [...Array(100)].map(_ => arrayOfGivenLetters[rand(0, arrayOfGivenLetters.length-1)]);
+console.log(arrayOfRandomLetters);
+
+console.clear();
+
+let countA = 0;
+let countB = 0;
+let countC = 0;
+let countD = 0;
+
+for (let letter of arrayOfRandomLetters) {
+    if (letter === 'A') {
+        countA += 1;
+    }
+    if (letter === 'B') {
+        countB += 1;
+    }
+    if (letter === 'C') {
+        countC += 1;
+    }
+    if (letter === 'D') {
+        countD += 1;
+    }
+}
+console.log(`A: ${countA}, B: ${countB}, C: ${countC}, D: ${countD}`);
+
+// 8
+
+function lygineSuma(a, b) {
+    if (typeof a === 'number'
+        && typeof b === 'number') {
+            return a + b;
+        }
+    if (Array.isArray(a)
+        && Array.isArray(b)) {
+            return a.length + b.length
+        }
+    else {
+        throw console.error('Kintamieji turi buti arba skaiciai, arba masyvai');
+    }
+}
+console.log(lygineSuma([1, 5, 3], [2, 2]));
+
+// 9
+
+function pirminisSkaicius(a) {
+    if (typeof a === 'number') {
+        if (a === 1 || a === 0) {
+            return false
+        }
+        if (a === 2) {
+            return true
+        } else {
+            for (let i = 2; i < a; i++) {
+            if (a % i !== 0) {
+            return true
+                } else if (a === i * i) {
+                return false
+             } else {
+                return false
+             }
+             }
+        }
+    } else {
+        return false
+    }
+}
+console.log(pirminisSkaicius(19));
+
+// 10
+
+let numbers = [...Array(10)].map(_ => rand(0, 9));
+
+function telefonoNumeris(arr) {
+    if (Array.isArray(arr) &&
+        arr.length === 10) {
+            return `(${arr[0]}${arr[1]}${arr[2]}) ${arr[3]}${arr[4]}${arr[5]}-${arr[6]}${arr[7]}${arr[8]}${arr[9]}`;
+        } else {
+            throw console.error('Kintamasis nera masyvas, arba jo ilgis nelygus 10');
+        }
+};
+console.log(telefonoNumeris(numbers));
