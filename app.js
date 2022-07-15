@@ -40,7 +40,7 @@ for (let i = 0; i < 5; i++) {
 /* arba kitas budas */
 
 for (let i = 0; i < 5; i++) {
-    console.log(Math.floor(Math.random() * 10));
+    console.log(Math.ceil(Math.random() * 10));
 };
 
 // 5
@@ -48,7 +48,7 @@ console.clear();
 
 let x = 0;
 while (x != 5) {
-    x = Math.floor(Math.random()*10);
+    x = Math.ceil(Math.random()*10);
     console.log(x);
 };
 
